@@ -1,18 +1,15 @@
 language: python
-notifications:
-    email: naveenmishra1197@gmail.com
 python:
-  - 3.8
-  - 3.9
-  
+  - 2.7
+  - 3.5
+  - 3.6
 before_install:
   - python --version
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
 install:
-  - pip install .[test] # install package + test dependencies
+  - pip install ".[test]" . # install package + test dependencies
 script: pytest # run tests
 after_success:
   - codecov # submit coverage
-      
